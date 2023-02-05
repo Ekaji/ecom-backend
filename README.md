@@ -2,7 +2,7 @@
 This API is designed for an eCommerce store, providing various features for managing products, orders, and customers.
 
 ## Features
-- Product Management: Create, update, and delete products, as well as retrieve a list of all products or a specific product by ID. []
+- [ ] Product Management: Create, update, and delete products, as well as retrieve a list of all products or a specific product by ID.
 - Order Management: Create and manage orders, including retrieving a list of all orders and individual orders by ID.
 - Customer Management: Create, update, and delete customer information, as well as retrieve a list of all customers or a specific customer by ID.
 - Authentication: Secure access to the API with token-based authentication.
