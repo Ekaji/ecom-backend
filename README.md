@@ -29,11 +29,11 @@ API documentation is available in the form of a Swagger/OpenAPI file, providing 
 ## Requirements
 - Node.js
 - Express
-
+- postgress https://www.atatus.com/blog/building-crud-rest-api-with-node-js-express-js-and-postgresql/
 ## Getting Started
 
 Clone the repository
-```git clone https://github.com/{your-username}/ecommerce-backend-api.git```
+```git clone https://github.com/Ekaji/ecom-backend.git```
 
 Install dependencies
 ``` npm install```
