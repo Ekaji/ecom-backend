@@ -7,6 +7,6 @@ export const getImages = (req: Request, res: Response) => {
             throw error
         }
         console.log(result.rows[0].image_link)
-        res.status(200).json(result.rows)
+        res.status(200).json( result.rows )
     })
 };
