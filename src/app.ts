@@ -3,28 +3,28 @@ import express, {
     Request,
     Response,
     NextFunction,
-    urlencoded
+    Express
 } from "express";
-import * as dotenv from 'dotenv';
 
-dotenv.config()
+import log from "./utils/logger";
 
-import { getImages, getProducts } from "./queries";
+import { products, images, auth } from "./routes/routes";
 
-const app: Application = express()
+const app: Express = express()
 const PORT = process.env.PORT || 8080
 
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
+
+app.use('/products', products)
+app.use('/images', images)
+app.use('/', auth)
 
 app.get("/", (req : Request, res : Response) => {
     res.send("TS App is running")
 })
 
-app.get('/images', getImages)
-app.get('/products', getProducts)
-
 app.listen(PORT, () => {
-    console.log(`app is listening on ${PORT}`)
+   log.info(`app is listening on ${PORT}`)
 })
 
