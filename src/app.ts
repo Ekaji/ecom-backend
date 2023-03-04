@@ -8,7 +8,7 @@ import express, {
 
 import log from "./utils/logger";
 
-import { products, images, auth } from "./routes/routes";
+import { products, images, auth, form } from "./routes/routes";
 
 const app: Express = express()
 const PORT = process.env.PORT || 8080
@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/products', products)
 app.use('/images', images)
 app.use('/', auth)
+app.use('/', form)
 
 app.get("/", (req : Request, res : Response) => {
     res.send("TS App is running")

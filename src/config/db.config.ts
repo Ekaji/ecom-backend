@@ -4,7 +4,10 @@ import { Pool } from "pg";
 import * as dotenv from 'dotenv';
 dotenv.config()
 
+const connectionString = 'postgresql://postgres:cdFKbxcFuwZP3YfmCv4B@containers-us-west-102.railway.app:6867/railway'
+
 export const pool = new Pool({
+    // connectionString
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_DATABASE,
@@ -20,4 +23,5 @@ const connectToDB = async () => {
         console.log(err)
     }
 };
+
 connectToDB()

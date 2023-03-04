@@ -1,3 +1,5 @@
 export { default as products } from './products.routes'
 export { default as images } from './images.routes'
 export { default as auth } from './auth.routes'
+export { default as saved_products } from './saved_item.routes'
+export { default as form } from './static_files.routes'
