@@ -27,6 +27,22 @@ export const remove_saved_item = (req: Request, res: Response) => {
     const { user_id, product_id } = req.body
     
     pool.query('DELETE FROM saved_items WHERE (user_id = $1 AND product_id = $2) RETURNING *', [user_id, product_id], (error, result) => {
+        if (error) {
+            throw Error;
+        }
+        
+        res.status(204).json({message : 'removed product from saved item'})
+    })
+}
 
+export const remove_all_saved_item = (req: Request, res: Response) => {
+    const { user_id } = req.body
+    
+    pool.query('DELETE FROM saved_item WHERE (user_id = $1) RETURNING *', [user_id], (error, result) => {
+        if (error) {
+            throw Error;
+        }
+        
+        res.status(204).json({message : 'removed product from saved item'})
     })
 }

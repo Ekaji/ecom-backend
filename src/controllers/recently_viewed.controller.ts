@@ -26,3 +26,15 @@ export const remove_viewed_item = (req: Request, res: Response) => {
         res.status(204).json({message : 'removed product from viewed item'})
     })
 }
+
+export const remove_all_viewed_item = (req: Request, res: Response) => {
+    const { user_id } = req.body
+    
+    pool.query('DELETE FROM viewed_item WHERE (user_id = $1) RETURNING *', [user_id], (error, result) => {
+        if (error) {
+            throw Error;
+        }
+        
+        res.status(204).json({message : 'removed product from viewed item'})
+    })
+}
