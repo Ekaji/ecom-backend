@@ -24,3 +24,7 @@ export const imageUpload = async (req: Request, res: Response) => {
       imageURL,
     });
   }
+
+// export const delete_product_image = () => {
+//   https://dev.to/ebereplenty/cloudinary-and-postgresql-deleting-and-updating-images-using-nodejs-l8d
+//   }
